@@ -1,4 +1,4 @@
-# MyApp
+# MUEBLES
 
 Esta es una aplicación simple organizada utilizando el modelo de tres capas con Prisma para el acceso a datos.
 
@@ -7,14 +7,18 @@ Esta es una aplicación simple organizada utilizando el modelo de tres capas con
 - **client/**: Dentro de este directorio se encuentras las vistas en html y recursos que luego se llaman desde la capa de presentación para servirlas con express en el archivo de `muebles.routes.js`.
 
 - **prisma/**: Directorio que contiene archivos relacionados con Prisma.
+
   - `schema.prisma`: Archivo donde defines tu modelo de datos y la configuración de la conexión a la base de datos.
 
 - **src/**: Directorio principal de la aplicación.
+
   - **presentation/**: Capa de presentación.
+
     - **routes/**: Directorio que contiene los archivos de rutas.
       - `muebles.routes.js`: Archivo que contiene las rutas y la lógica de presentación utilizando Express.
 
   - **business/**: Capa de lógica de negocio.
+
     - `muebles.js`: Archivo que contiene la lógica de negocio relacionada con las tareas.
 
   - `index.js`: Archivo principal que se ejecuta para configurar y arrancar la aplicación Express.
@@ -28,6 +32,7 @@ Instalamos las dependencias
 ```
 npm i
 ```
+
 Configuramos el `.env` en el directorio principal en caso de no existir lo creamos.
 
 Recordar que se tiene que crear la base de datos el nombre puede ser cualquiera si no tiene clave la base de datos crear un usuario con todos los privilegios
@@ -52,6 +57,7 @@ Para que se puedan crear las tablas en la DB hay que ejecutar las migraciones es
 ```
 npx prisma migrate dev
 ```
+
 pedira que ingreses el nombre de la migracion en este caso es a dispocición solo no ingresar textos con espacio y todo en minuscula
 
 ## Levanta el servidor
