@@ -1,0 +1,33 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+
+model MuebleMelamina {
+  id Int @id @default(autoincrement())
+  nombre String
+  color String
+  material String
+  precio Decimal @db.Decimal(8,2)
+  mueble Mueble[]
+}
+
+
+model Mueble {
+  id Int @id @default(autoincrement())
+  nombre String
+  ancho String
+  alto String
+  cantidad Int 
+  precio Decimal @db.Decimal(8,2)
+  muebleMelaminaId Int
+  muebleMelamina MuebleMelamina @relation(fields: [muebleMelaminaId], references: [id])
+}

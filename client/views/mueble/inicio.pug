@@ -1,0 +1,21 @@
+extends ../layouts/index
+block content
+    div 
+        h1(class="text-center")  lista de todos
+        table(class="table container mx-auto") 
+            thead(class="table-dark")
+                tr 
+                    th nombre 
+                    th alto 
+                    th ancho 
+                    th cantidad 
+                    th echo de 
+            tbody 
+                if muebles
+                    each m in muebles
+                        tr
+                            td=m.nombre
+                            td=m.alto
+                            td=m.ancho
+                            td=m.cantidad 
+                            td=m.muebleMelamina.nombre

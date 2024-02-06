@@ -1,0 +1,36 @@
+extends ../layouts/index
+block content
+    h2(class="text-center my-2") Registra un nuevo mueble
+
+    div(style="max-width:500px" class="mx-auto border p-4") 
+        p=msg ? msg : ''
+        form(action="/mueble", method="post") 
+            div.mb-3 
+                label(class="form-label" for="nombre") Nombre 
+                input(class="form-control" id="nombre" type="text", name="nombre") 
+            
+            div.mb-3
+                label(class="form-label" for="ancho") Ancho 
+                input(class="form-control"  id="ancho" type="text", name="ancho") 
+            
+            div.mb-3 
+                label(class="form-label" for="alto") Alto 
+                input(class="form-control"  id="alto" type="text", name="alto")
+            
+            div.mb-3 
+                label(class="form-label" for="cantidad") Cantidad 
+                input(class="form-control"  id="cantidad" type="text", name="cantidad") 
+
+            div.mb-3 
+                label(class="form-label" for="precio") Precio 
+                input(class="form-control"  id="precio" type="number", name="precio") 
+            
+            div.mb-3 
+                label(class="form-label" for="muebleMelaminaId") Material 
+                select(class="form-control" id="muebleMelaminaId" name="muebleMelaminaId")
+                    option(value="") Seleccionar 
+                    each m in melaminas
+                        option(value=m.id)=m.nombre 
+
+            input(class="btn btn-primary" type="submit", value="Registrar")
+            
